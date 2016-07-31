@@ -19,29 +19,29 @@ function check_winner(j,i) {
   var count = positions_logic[j].filter(function(x) {return x === positions_logic[j][i]}).length;
   if (count === 3){
     winner = positions_logic[j][i];
-    console.log("ganador: "+winner);
+    //console.log("ganador: "+winner);
   }
 
   if (positions_logic[0][i] === positions_logic[1][i] && positions_logic[1][i] === positions_logic[2][i]){
     winner = positions_logic[j][i];
-    console.log("ganador: "+winner);
+    //console.log("ganador: "+winner);
   }
 
   if (['00','11','22'].indexOf(''+j+''+i) > -1){
     if (positions_logic[0][0] === positions_logic[1][1] && positions_logic[1][1] === positions_logic[2][2]){
       winner = positions_logic[j][i];
-      console.log("ganador: "+winner);
+      //console.log("ganador: "+winner);
     }
   }else if (['02','11','20'].indexOf(''+j+''+i) > -1){
     if (positions_logic[0][2] === positions_logic[1][1] && positions_logic[1][1] === positions_logic[2][0]){
       winner = positions_logic[j][i];
-      console.log("ganador: "+winner);
+      //console.log("ganador: "+winner);
     }
   }
 
   if (winner === 0 && is_full()){
-    winner = -1;//No hay mas turnos
-    console.log("No hay mas turnos");
+    winner = -1;
+    //console.log("No hay mas turnos");
   }
 
   return winner;
