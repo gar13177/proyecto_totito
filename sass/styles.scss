@@ -19,7 +19,7 @@ $y_init: 50px;
   text-align: center;
   text-shadow: 2px 2px 8px darkslategray;
   width: $box_size;
-  
+
   &:hover{
     background-color: #3d4250;
     opacity: .7;
@@ -31,7 +31,6 @@ $y_init: 50px;
           left: ($j - 1) * ($box_size + $space_between) + $x_init;
           top: ($i - 1) * ($box_size + $space_between) + $y_init;
       }
-      
     }
   }
 }
