@@ -1,4 +1,39 @@
 
+var actual_turn = 1;
+var positions_logic = [[0, 0, 0],
+  [0, 0, 0],
+  [0, 0, 0]];
+
+var positions_event = [];
+
+function new_click(j, i) {
+  positions_logic[j][i] = actual_turn;
+  if (actual_turn === 1){
+    actual_turn = 2;
+  }else{
+    actual_turn = 1;
+  }
+  check_winner();
+}
+
+function check_winner(){
+  if (positions_logic.indexOf(0) > -1){
+    console.log("We have a winner");
+  }
+}
+
+for (var j = 1; j <= positions_logic.length; j++) {
+  //var temp = [];
+  for (var i = 1; i <= positions_logic[j - 1].length; i++) {
+    //console.log(''+j+'_'+i);
+    var box = document.getElementById('' + j + '_' + i);
+    box.onclick = new_click(j-1,i-1);
+    //temp.push(box);
+  }
+  //positions_event.push(temp);
+}
+
+/*
 var reloj = "1";
 var selector = document.getElementById("selector");
 var deg_h = 0;
@@ -75,3 +110,67 @@ function change_clock(){
 change_clock();
 window.addEventListener("load", start, false);
 window.setInterval(changeTime, 1000);
+*/
+
+
+//scss
+/*$bottom_pos: 0px;
+$left_pos: 255px;
+
+.reloj{
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: gray;
+  border: 5px solid black;
+  margin-left: 0;
+  margin-top: 0;
+}
+
+
+@mixin numero(){
+  height: 250px;
+  color: black;
+  font-size: 50px;
+  line-height: 80px;
+  position: absolute;
+  margin-left: $left_pos;
+  top: $bottom_pos;
+  transform-origin: bottom left;
+  @for $i from 1 through (12){
+    &.n#{$i}{
+      transform: rotate($i * 30deg);
+    }
+  }
+}
+
+.numero{
+  @include numero();
+}
+
+.aguja{
+  height: 230px;
+  background: black;
+  transform-origin: bottom center;
+  position: absolute;
+  left: $left_pos;
+  top: $bottom_pos + 20px;
+}
+
+.horero{
+  width: 10px;
+}
+
+.minutero{
+  width: 5px;
+}
+
+.segundero{
+  width: 3px;
+  background: red;
+}
+
+.digital{
+  font-size: 100px;
+}
+*/

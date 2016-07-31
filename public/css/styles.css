@@ -1,63 +1,35 @@
-.reloj {
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: gray;
-  border: 5px solid black;
-  margin-left: 0;
-  margin-top: 0; }
-
-.numero {
-  height: 250px;
-  color: black;
-  font-size: 50px;
-  line-height: 80px;
+.box {
+  padding: 0;
   position: absolute;
-  margin-left: 255px;
-  top: 0px;
-  transform-origin: bottom left; }
-  .numero.n1 {
-    transform: rotate(30deg); }
-  .numero.n2 {
-    transform: rotate(60deg); }
-  .numero.n3 {
-    transform: rotate(90deg); }
-  .numero.n4 {
-    transform: rotate(120deg); }
-  .numero.n5 {
-    transform: rotate(150deg); }
-  .numero.n6 {
-    transform: rotate(180deg); }
-  .numero.n7 {
-    transform: rotate(210deg); }
-  .numero.n8 {
-    transform: rotate(240deg); }
-  .numero.n9 {
-    transform: rotate(270deg); }
-  .numero.n10 {
-    transform: rotate(300deg); }
-  .numero.n11 {
-    transform: rotate(330deg); }
-  .numero.n12 {
-    transform: rotate(360deg); }
-
-.aguja {
-  height: 230px;
   background: black;
-  transform-origin: bottom center;
-  position: absolute;
-  left: 255px;
-  top: 20px; }
-
-.horero {
-  width: 10px; }
-
-.minutero {
-  width: 5px; }
-
-.segundero {
-  width: 3px;
-  background: red; }
-
-.digital {
-  font-size: 100px; }
+  color: white;
+  height: 200px;
+  width: 200px;
+  box-sizing: border-box; }
+  .box.b11 {
+    top: 50px;
+    left: 50px; }
+  .box.b12 {
+    top: 50px;
+    left: 270px; }
+  .box.b13 {
+    top: 50px;
+    left: 490px; }
+  .box.b21 {
+    top: 270px;
+    left: 50px; }
+  .box.b22 {
+    top: 270px;
+    left: 270px; }
+  .box.b23 {
+    top: 270px;
+    left: 490px; }
+  .box.b31 {
+    top: 490px;
+    left: 50px; }
+  .box.b32 {
+    top: 490px;
+    left: 270px; }
+  .box.b33 {
+    top: 490px;
+    left: 490px; }

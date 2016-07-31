@@ -1,59 +1,28 @@
-$bottom_pos: 0px;
-$left_pos: 255px;
 
-.reloj{
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: gray;
-  border: 5px solid black;
-  margin-left: 0;
-  margin-top: 0;
-}
+$box_size: 200px;
+$space_between: 20px;
+$x_init: 50px;
+$y_init: 50px;
 
-
-@mixin numero(){
-  height: 250px;
-  color: black;
-  font-size: 50px;
-  line-height: 80px;
+@mixin box ($box_size, $space_between, $x_init, $y_init){
+  padding: 0;
   position: absolute;
-  margin-left: $left_pos;
-  top: $bottom_pos;
-  transform-origin: bottom left;
-  @for $i from 1 through (12){
-    &.n#{$i}{
-      transform: rotate($i * 30deg);
+  background: black;
+  color: white;
+  height: $box_size;
+  width: $box_size;
+  box-sizing: border-box;
+
+  @for $i from 1 to 4{
+    @for $j from 1 to 4{
+      &.b#{$i}#{$j}{
+          top: ($i - 1) * ($box_size + $space_between) + $y_init;
+          left: ($j - 1) * ($box_size + $space_between) + $x_init;
+      }
     }
   }
 }
 
-.numero{
-  @include numero();
-}
-
-.aguja{
-  height: 230px;
-  background: black;
-  transform-origin: bottom center;
-  position: absolute;
-  left: $left_pos;
-  top: $bottom_pos + 20px;
-}
-
-.horero{
-  width: 10px;
-}
-
-.minutero{
-  width: 5px;
-}
-
-.segundero{
-  width: 3px;
-  background: red;
-}
-
-.digital{
-  font-size: 100px;
+.box {
+    @include box($box_size, $space_between, $x_init, $y_init);    
 }
