@@ -1,35 +1,42 @@
 .box {
+  background: #b6b5ca;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: white;
+  font-family: 'Verdana', Geneva, sans-serif;
+  font-size: 100px;
+  font-weight: bold;
+  height: 200px;
+  line-height: 200px;
   padding: 0;
   position: absolute;
-  background: black;
-  color: white;
-  height: 200px;
+  text-align: center;
   width: 200px;
-  box-sizing: border-box; }
+  text-shadow: 2px 2px 8px darkslategray; }
   .box.b11 {
-    top: 50px;
-    left: 50px; }
+    left: 50px;
+    top: 50px; }
   .box.b12 {
-    top: 50px;
-    left: 270px; }
+    left: 270px;
+    top: 50px; }
   .box.b13 {
-    top: 50px;
-    left: 490px; }
+    left: 490px;
+    top: 50px; }
   .box.b21 {
-    top: 270px;
-    left: 50px; }
+    left: 50px;
+    top: 270px; }
   .box.b22 {
-    top: 270px;
-    left: 270px; }
+    left: 270px;
+    top: 270px; }
   .box.b23 {
-    top: 270px;
-    left: 490px; }
+    left: 490px;
+    top: 270px; }
   .box.b31 {
-    top: 490px;
-    left: 50px; }
+    left: 50px;
+    top: 490px; }
   .box.b32 {
-    top: 490px;
-    left: 270px; }
+    left: 270px;
+    top: 490px; }
   .box.b33 {
-    top: 490px;
-    left: 490px; }
+    left: 490px;
+    top: 490px; }

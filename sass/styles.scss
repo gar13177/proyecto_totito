@@ -5,19 +5,26 @@ $x_init: 50px;
 $y_init: 50px;
 
 @mixin box ($box_size, $space_between, $x_init, $y_init){
+  background: #b6b5ca;
+  border-radius: $box_size * 0.05;
+  box-sizing: border-box;
+  color: white;
+  font-family: 'Verdana', Geneva, sans-serif;
+  font-size: $box_size * 0.5;
+  font-weight: bold;
+  height: $box_size;
+  line-height: $box_size;
   padding: 0;
   position: absolute;
-  background: black;
-  color: white;
-  height: $box_size;
+  text-align: center;
   width: $box_size;
-  box-sizing: border-box;
+  text-shadow: 2px 2px 8px darkslategray;
 
   @for $i from 1 to 4{
     @for $j from 1 to 4{
       &.b#{$i}#{$j}{
-          top: ($i - 1) * ($box_size + $space_between) + $y_init;
           left: ($j - 1) * ($box_size + $space_between) + $x_init;
+          top: ($i - 1) * ($box_size + $space_between) + $y_init;
       }
     }
   }

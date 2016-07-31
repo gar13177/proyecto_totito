@@ -1,36 +1,55 @@
 
 var actual_turn = 1;
-var positions_logic = [[0, 0, 0],
-  [0, 0, 0],
-  [0, 0, 0]];
+var positions_logic = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
 
-var positions_event = [];
-
-function new_click(j, i) {
-  positions_logic[j][i] = actual_turn;
-  if (actual_turn === 1){
-    actual_turn = 2;
-  }else{
-    actual_turn = 1;
-  }
-  check_winner();
+function is_full(){
+  var value = true;
+  positions_logic.forEach(function(array){
+    array.forEach(function(element){
+      if (element === 0){
+        value = false;
+      }
+    });
+  });
+  return value;
 }
 
-function check_winner(){
-  if (positions_logic.indexOf(0) > -1){
-    console.log("We have a winner");
+function check_winner() {
+  //cambiar orden porque primero revisaria si ya no hay mas posiciones
+  //esto quiere decir que si en el ultimo turno se gana, daria error
+  //ya que no detectaria que con ese turno gano
+  if (!is_full()) {
+    console.log("Nuevo Turno");
+  }else{
+    console.log("No hay mas turnos");
+  }
+}
+
+function new_click() {
+  var id = this.id;
+  var this_j = id.split('_')[0];
+  var this_i = id.split('_')[1];
+  if (positions_logic[this_j - 1][this_i - 1] === 0) {
+    positions_logic[this_j - 1][this_i - 1] = actual_turn;
+    
+    if (actual_turn === 1) {
+      this.innerHTML = 'X';
+      this.style.backgroundColor = '#dc685a';
+      actual_turn = 2;
+    } else {
+      this.innerHTML = 'O';
+      this.style.backgroundColor = '#ecaf4f';
+      actual_turn = 1;
+    }
+    check_winner();
   }
 }
 
 for (var j = 1; j <= positions_logic.length; j++) {
-  //var temp = [];
   for (var i = 1; i <= positions_logic[j - 1].length; i++) {
-    //console.log(''+j+'_'+i);
     var box = document.getElementById('' + j + '_' + i);
-    box.onclick = new_click(j-1,i-1);
-    //temp.push(box);
+    box.onclick = new_click;
   }
-  //positions_event.push(temp);
 }
 
 /*
