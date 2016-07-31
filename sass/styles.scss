@@ -38,34 +38,32 @@ $y_init: 50px;
     @include box($box_size, $space_between, $x_init, $y_init);    
 }
 
+.end {
+  background: rgba(255, 255, 255, .8);
+  color: #3d4250;
+  display: none;
+  height: $box_size * 3 + $space_between * 2;
+  left: $x_init;
+  position: absolute;
+  text-align: center;
+  top: $y_init;
+  width: $box_size * 3 + $space_between * 2;
+  z-index: 1;
 
-// End screen style
-  .end {
-    background: rgba(255, 255, 255, .8);
-    color: #3d4250;
-    display: none;
-    height: $box_size * 3 + $space_between * 2;
-    left: $x_init;
-    position: absolute;
-    text-align: center;
-    top: $y_init;
-    width: $box_size * 3 + $space_between * 2;
-    z-index: 1;
-
-    h1 {
-      font-size: 30px;
-      font-weight: 300;
-    }
+  h1 {
+    font-size: 30px;
+    font-weight: 300;
+  }
+  
+  a {
+    background-color: #3d4250;
+    border-radius: 4px;
+    color: #fff;
+    padding: 14px 45px;
+    text-decoration: none;
     
-    a {
-      background-color: #3d4250;
-      border-radius: 4px;
-      color: #fff;
-      padding: 14px 45px;
-      text-decoration: none;
-      
-      &:hover {
-        background-color: #262934;
-      }
+    &:hover {
+      background-color: #262934;
     }
   }
+}
