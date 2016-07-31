@@ -97,11 +97,7 @@ function on_mouse_out(){
   var this_j = id.split('_')[0];
   var this_i = id.split('_')[1];
   if (positions_logic[this_j - 1][this_i - 1] === 0) {
-    if (actual_turn === 1){
-      this.innerHTML = '';
-    }else{
-      this.innerHTML = '';
-    }
+    this.innerHTML = '';
   }
 }
 
