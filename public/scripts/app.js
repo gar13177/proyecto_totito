@@ -32,7 +32,9 @@ function check_winner(j,i) {
       winner = positions_logic[j][i];
       //console.log("ganador: "+winner);
     }
-  }else if (['02','11','20'].indexOf(''+j+''+i) > -1){
+  }
+  
+  if (['02','11','20'].indexOf(''+j+''+i) > -1){
     if (positions_logic[0][2] === positions_logic[1][1] && positions_logic[1][1] === positions_logic[2][0]){
       winner = positions_logic[j][i];
       //console.log("ganador: "+winner);
