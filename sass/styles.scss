@@ -20,10 +20,7 @@ $y_init: 10px;
   text-shadow: 2px 2px 8px darkslategray;
   width: $box_size;
 
-  &:hover{
-    background-color: #3d4250;
-    opacity: .7;
-  }
+  
 
   @for $i from 1 to 4{
     @for $j from 1 to 4{
@@ -44,10 +41,22 @@ $y_init: 10px;
   opacity: .7;
 }
 
+.clic_x {
+  background: #dc685a;
+}
+
+.clic_o {
+  background: #ecaf4f;
+}
+
+.hide {
+  display: none;
+}
+
 .end {
   background: rgba(255, 255, 255, .8);
   color: #3d4250;
-  display: none;
+  //display: none;
   height: $box_size * 3 + $space_between * 2;
   left: $x_init;
   position: absolute;
@@ -68,8 +77,5 @@ $y_init: 10px;
     padding: 14px 45px;
     text-decoration: none;
     
-    &:hover {
-      background-color: #262934;
-    }
   }
 }

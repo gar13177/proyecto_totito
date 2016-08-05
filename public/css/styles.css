@@ -13,9 +13,6 @@
   text-align: center;
   text-shadow: 2px 2px 8px darkslategray;
   width: 150px; }
-  .box:hover {
-    background-color: #3d4250;
-    opacity: .7; }
   .box.b11 {
     left: 10px;
     top: 10px; }
@@ -48,10 +45,18 @@
   background-color: #3d4250;
   opacity: .7; }
 
+.clic_x {
+  background: #dc685a; }
+
+.clic_o {
+  background: #ecaf4f; }
+
+.hide {
+  display: none; }
+
 .end {
   background: rgba(255, 255, 255, 0.8);
   color: #3d4250;
-  display: none;
   height: 470px;
   left: 10px;
   position: absolute;
@@ -68,5 +73,3 @@
     color: #fff;
     padding: 14px 45px;
     text-decoration: none; }
-    .end a:hover {
-      background-color: #262934; }
