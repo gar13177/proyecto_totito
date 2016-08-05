@@ -1,8 +1,8 @@
 
-$box_size: 200px;
-$space_between: 20px;
-$x_init: 50px;
-$y_init: 50px;
+$box_size: 150px;
+$space_between: 10px;
+$x_init: 10px;
+$y_init: 10px;
 
 @mixin box ($box_size, $space_between, $x_init, $y_init){
   background: #78bec5;
@@ -37,6 +37,11 @@ $y_init: 50px;
 
 .box {
     @include box($box_size, $space_between, $x_init, $y_init);    
+}
+
+.hover {
+  background-color: #3d4250;
+  opacity: .7;
 }
 
 .end {

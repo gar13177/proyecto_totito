@@ -1,59 +1,63 @@
 .box {
   background: #78bec5;
-  border-radius: 10px;
+  border-radius: 7.5px;
   box-sizing: border-box;
   color: white;
   font-family: 'Verdana', Geneva, sans-serif;
-  font-size: 100px;
+  font-size: 75px;
   font-weight: bold;
-  height: 200px;
-  line-height: 200px;
+  height: 150px;
+  line-height: 150px;
   padding: 0;
   position: absolute;
   text-align: center;
   text-shadow: 2px 2px 8px darkslategray;
-  width: 200px; }
+  width: 150px; }
   .box:hover {
     background-color: #3d4250;
     opacity: .7; }
   .box.b11 {
-    left: 50px;
-    top: 50px; }
+    left: 10px;
+    top: 10px; }
   .box.b12 {
-    left: 270px;
-    top: 50px; }
+    left: 170px;
+    top: 10px; }
   .box.b13 {
-    left: 490px;
-    top: 50px; }
+    left: 330px;
+    top: 10px; }
   .box.b21 {
-    left: 50px;
-    top: 270px; }
+    left: 10px;
+    top: 170px; }
   .box.b22 {
-    left: 270px;
-    top: 270px; }
+    left: 170px;
+    top: 170px; }
   .box.b23 {
-    left: 490px;
-    top: 270px; }
+    left: 330px;
+    top: 170px; }
   .box.b31 {
-    left: 50px;
-    top: 490px; }
+    left: 10px;
+    top: 330px; }
   .box.b32 {
-    left: 270px;
-    top: 490px; }
+    left: 170px;
+    top: 330px; }
   .box.b33 {
-    left: 490px;
-    top: 490px; }
+    left: 330px;
+    top: 330px; }
+
+.hover {
+  background-color: #3d4250;
+  opacity: .7; }
 
 .end {
   background: rgba(255, 255, 255, 0.8);
   color: #3d4250;
   display: none;
-  height: 640px;
-  left: 50px;
+  height: 470px;
+  left: 10px;
   position: absolute;
   text-align: center;
-  top: 50px;
-  width: 640px;
+  top: 10px;
+  width: 470px;
   z-index: 1; }
   .end h1 {
     font-size: 30px;

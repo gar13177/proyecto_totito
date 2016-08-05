@@ -101,6 +101,28 @@ function on_mouse_out(){
   }
 }
 
+
+
+function first_render(){
+  var html = "";
+  for (var j = 1; j <= positions_logic.length; j++){
+    for (var i = 1; i <= positions_logic[j - 1].length; i++){
+      html += '<div class="box b'+j+i+'" id="'+j+'_'+i+'"></div>';
+    }
+  }
+
+  html += '<div class="end" id="0_0">';
+  html += '<h1 id="player"></h1>';
+  html += '<a href="">Nuevo Juego</a>';
+  html += '</div>';
+
+  var viewport = document.getElementById("all");
+  viewport.innerHTML = html;
+
+}
+
+first_render();
+
 for (var j = 1; j <= positions_logic.length; j++) {
   for (var i = 1; i <= positions_logic[j - 1].length; i++) {
     var box = document.getElementById('' + j + '_' + i);
