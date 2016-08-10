@@ -1,9 +1,12 @@
 
-var state = {};
-state.actual_turn = 1;
-state.positions_logic = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
+var state = {
+  actual_turn: 1,
+  positions_logic: [[0, 0, 0], 
+                    [0, 0, 0],
+                    [0, 0, 0]]
+};
 
-function is_full(){
+function isFull(){
   var full = true;
   state.positions_logic.forEach(function(array){
     array.forEach(function(element){
@@ -15,7 +18,7 @@ function is_full(){
   return full;
 }
 
-function check_winner(j,i) {
+function checkWinner(j,i) {
   var winner = 0;//0 indica que todavia no han ganado
   var count = state.positions_logic[j].filter(function(x) {return x === state.positions_logic[j][i]}).length;
   if (count === 3){
@@ -42,7 +45,7 @@ function check_winner(j,i) {
     }
   }
 
-  if (winner === 0 && is_full()){
+  if (winner === 0 && isFull()){
     winner = -1;
     //console.log("No hay mas turnos");
   }
@@ -50,43 +53,45 @@ function check_winner(j,i) {
   return winner;
 }
 
-function new_click() {
+function newClick() {
   var id = this.id;
   var this_j = id.split('_')[0];
   var this_i = id.split('_')[1];
   if (state.positions_logic[this_j - 1][this_i - 1] <= 0) {
     state.positions_logic[this_j - 1][this_i - 1] = state.actual_turn;
-    render(build_html(state)+build_html_winner(this_j,this_i));
     if (state.actual_turn === 1){
       state.actual_turn = 2;
     }else{
       state.actual_turn = 1;
     }
+    setHTML(render(state)+buildHtmlWinner(this_j,this_i));
   }
 }
 
-function on_mouse_over(){
+/*
+//funciones definidas cambiadas a hover en css
+function onMouseOver(){
   var id = this.id;
   var this_j = id.split('_')[0];
   var this_i = id.split('_')[1];
   if (state.positions_logic[this_j - 1][this_i - 1] == 0) {
     state.positions_logic[this_j - 1][this_i - 1] = -state.actual_turn;//solo se coloca 
-    render(build_html(state));
+    setHTML(render(state));
   }
 }
 
-function on_mouse_out(){
+function onMouseOut(){
   var id = this.id;
   var this_j = id.split('_')[0];
   var this_i = id.split('_')[1];
   if (state.positions_logic[this_j - 1][this_i - 1] < 0) {
     state.positions_logic[this_j - 1][this_i - 1] = 0;
-    render(build_html(state));
+    setHTML(render(state));
   }
-}
+}*/
 
-function build_html_winner(this_j, this_i){
-  var winner = check_winner(this_j-1,this_i-1);
+function buildHtmlWinner(this_j, this_i){
+  var winner = checkWinner(this_j-1,this_i-1);
   var html = '';
   if ( winner != 0){
       if (winner === -1){
@@ -105,26 +110,25 @@ function build_html_winner(this_j, this_i){
   return html;
 }
 
-function build_html(state){
+function render(state){
   var html = "";
   for (var j = 1; j <= state.positions_logic.length; j++){
     for (var i = 1; i <= state.positions_logic[j - 1].length; i++){
       html += '<div id="'+j+'_'+i+'" class="box b'+j+''+i ;
       switch (state.positions_logic[j-1][i-1]){
         case 1:
-          html += ' clic_x">X</div>';
-          break;
-        case -1:
-          html += ' hover">X</div>';
+          html += ' clic-x">X</div>';
           break;
         case 2:
-          html += ' clic_o">O</div>';
-          break;
-        case -2:
-          html += ' hover">O</div>';
+          html += ' clic-o">O</div>';
           break;
         default:
-          html += '"></div>';
+          html += ' non-clic :hover ';
+          if (state.actual_turn === 1){
+            html += 'x :after" ></div>';
+          }else{
+            html += 'o :after" ></div>';
+          }
           break;
       }
     }
@@ -132,23 +136,22 @@ function build_html(state){
   return html;
 }
 
-
-function render(html){
+function setHTML(html){
   var viewport = document.getElementById("all");
   viewport.innerHTML = html;
-  set_actions();
+  setActions();
 }
 
-function set_actions(){
+function setActions(){
   for (var j = 1; j <= state.positions_logic.length; j++) {
     for (var i = 1; i <= state.positions_logic[j - 1].length; i++) {
       var box = document.getElementById('' + j + '_' + i);
-      box.onclick = new_click;
-      box.onmouseover = on_mouse_over;
-      box.onmouseout = on_mouse_out;
+      box.onclick = newClick;
+      //box.onmouseover = onMouseOver;
+      //box.onmouseout = onMouseOut;
     }
   }
 }
 
-render(build_html(state));
-set_actions();
+setHTML(render(state));
+setActions();

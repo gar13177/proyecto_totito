@@ -18,10 +18,8 @@ $y_init: 10px;
   position: absolute;
   text-align: center;
   text-shadow: 2px 2px 8px darkslategray;
-  width: $box_size;
-
+  width: $box_size; 
   
-
   @for $i from 1 to 4{
     @for $j from 1 to 4{
       &.b#{$i}#{$j}{
@@ -36,16 +34,24 @@ $y_init: 10px;
     @include box($box_size, $space_between, $x_init, $y_init);    
 }
 
+/*
+//css utilizado en vez de :hover
 .hover {
   background-color: #3d4250;
   opacity: .7;
-}
+  &.on_x{
+    content: "X";
+  }
+  &.on_y{
+    content: "O";
+  }
+}*/
 
-.clic_x {
+.clic-x {
   background: #dc685a;
 }
 
-.clic_o {
+.clic-o {
   background: #ecaf4f;
 }
 
@@ -53,10 +59,22 @@ $y_init: 10px;
   display: none;
 }
 
+.non-clic {
+  &:hover{
+    background-color: #3d4250;
+    opacity: .7;
+    &.x:after{
+      content: 'X';
+    }
+    &.o:after{
+      content: 'O';
+    }
+  }
+}
+
 .end {
   background: rgba(255, 255, 255, .8);
   color: #3d4250;
-  //display: none;
   height: $box_size * 3 + $space_between * 2;
   left: $x_init;
   position: absolute;
